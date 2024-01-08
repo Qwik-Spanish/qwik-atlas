@@ -1,15 +1,14 @@
-This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
-
 # Connect to mongodb or atlas with Qwik
 
-This is the basic Qwik app starter with mongoDB/Atlas added.
+This is the basic Qwik app starter with mongoDB/Atlas added as an example of using mongo/atlas with Qwik.
 
 Db file file is
 
 ```
 src/util/db.ts
-
 ```
+
+This file sets up the intial connection and then caches it so that you're not reconnecting all the time.
 
 Example files are
 
@@ -29,6 +28,8 @@ DATABASE_URI=mongo_db_connection_uri
 # Qwik
 
 # Qwik City App ⚡️
+
+This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
 
 - [Qwik Docs](https://qwik.builder.io/)
 - [Discord](https://qwik.builder.io/chat)
