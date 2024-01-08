@@ -23,7 +23,7 @@ src/routes/dbroute // example of using db.ts
 environment variable (eg, set in .env.local for local usage)
 
 ```
-DATABASE_URI=...mongo_db_connection_uri
+DATABASE_URI=mongo_db_connection_uri
 ```
 
 # Qwik
