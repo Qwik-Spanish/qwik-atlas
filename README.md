@@ -1,15 +1,3 @@
-# Qwik City App ⚡️
-
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
-
----
-
-## Project Structure
-
 This project is using Qwik with [QwikCity](https://qwik.builder.io/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
 
 # Connect to mongodb or atlas with Qwik
@@ -39,6 +27,18 @@ DATABASE_URI=...mongo_db_connection_uri
 ```
 
 # Qwik
+
+# Qwik City App ⚡️
+
+- [Qwik Docs](https://qwik.builder.io/)
+- [Discord](https://qwik.builder.io/chat)
+- [Qwik GitHub](https://github.com/BuilderIO/qwik)
+- [@QwikDev](https://twitter.com/QwikDev)
+- [Vite](https://vitejs.dev/)
+
+---
+
+## Project Structure
 
 Inside your project, you'll see the following directory structure:
 
