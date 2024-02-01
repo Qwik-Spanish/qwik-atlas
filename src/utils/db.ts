@@ -1,16 +1,16 @@
-import * as mongoDB from "mongodb";
+import { Db, MongoClient} from 'mongodb';
 
 
-let cachedDb: mongoDB.Db | undefined = undefined;
-let client: mongoDB.MongoClient | undefined = undefined;
+let cachedDb: Db | undefined = undefined;
+let client: MongoClient | undefined = undefined;
 
 
-export const initDB = async () => {
+export const initDB: Db= async () => {
     console.log("initialising db");
-    client = await mongoDB.MongoClient.connect(process.env.DATABASE_URI || "");
+    client = await MongoClient.connect(process.env.DATABASE_URI || "") as MongoClient;
 
     // Specify which database we want to use
-    const db = await client.db(process.env.DB_NAME || "");
+    const db: Db = await client.db(process.env.DB_NAME || "");
 
     cachedDb = db;
     console.log('created cached db');
@@ -25,5 +25,5 @@ export const getDBClient = async () => {
     }
     cachedDb = await initDB();
     console.log('returning new db');
-    return cachedDb as mongoDB.Db;
+    return cachedDb as Db;
 }

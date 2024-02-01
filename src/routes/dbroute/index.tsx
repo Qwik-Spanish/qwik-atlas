@@ -1,24 +1,25 @@
 import {  type RequestHandler, server$ } from "@builder.io/qwik-city";
-import { getDBClient } from "../../utils/db";
-import type { User } from "~/store/users";
+import { getDBClient } from "~/utils/db";
+import type { Character } from "~/store/characters";
 
-const getUser = server$(async (email) => {
+const getCharacter = server$(async (id: string) => {
   const db = await getDBClient();
-  const collection = await db.collection('users');
+  const collection = await db.collection('characters');
 
   const data = await collection.findOne({
-    email
-  }) as User;
+    id
+  }) as Character;
 
   return data;
 });
 
-export const onGet: RequestHandler = async (event) => {
+
+export const onGet: RequestHandler = async (event: any) => {
   
   
-   const user =  await getUser('some email address');
+   const character =  await getCharacter('1');
    event.send(202, JSON.stringify({
-    user: user,
+    character,
    }));
   
 };
