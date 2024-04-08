@@ -5,7 +5,7 @@ let cachedDb: Db | undefined = undefined;
 let client: MongoClient | undefined = undefined;
 
 
-export const initDB: Db= async () => {
+export async function initDB() {
     console.log("initialising db");
     client = await MongoClient.connect(process.env.DATABASE_URI || "") as MongoClient;
 
