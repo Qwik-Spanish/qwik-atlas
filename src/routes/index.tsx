@@ -1,17 +1,34 @@
-import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { component$, useStore, useTask$ } from "@builder.io/qwik";
+import { useLocation, type DocumentHead } from "@builder.io/qwik-city";
 
 import Counter from "~/components/starter/counter/counter";
 import Hero from "~/components/starter/hero/hero";
 import Infobox from "~/components/starter/infobox/infobox";
 import Starter from "~/components/starter/next-steps/next-steps";
+import { isServer } from '@builder.io/qwik/build';
+
+
 
 export default component$(() => {
+  const store = useStore({ data: null });
+  const location = useLocation();
+
+  useTask$(async () => {
+    if (isServer) {
+      const response = await fetch(`${location.url.origin}/items?page=1&items=5`);
+      store.data = await response.json();
+    }
+  });
   return (
     <>
+      {
+        store.data && <div>{JSON.stringify(store.data)}</div>
+      }
+
       <Hero />
       <Starter />
 
+      
       <div role="presentation" class="ellipsis"></div>
       <div role="presentation" class="ellipsis ellipsis-purple"></div>
 
