@@ -7,12 +7,12 @@ export type User = {
 };
 
 export type Character = {
-  _id: ObjectId;
+  _id?: ObjectId;
   id: string;
   name: string;
   actor: string;
   description: string;
-  total_episodes: number;
+  total_episodes: number | string;
   photo: string;
   url: string;
 };
