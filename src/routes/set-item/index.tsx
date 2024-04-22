@@ -1,5 +1,5 @@
 import type { RequestEvent, RequestHandler } from '@builder.io/qwik-city';
-
+// https://discord.com/channels/842438759945601056/1160945164471259146/1160945483670376468
 /**
  * declare interface RouteModule<BODY = unknown> {
     onDelete?: RequestHandler_2<BODY> | RequestHandler_2<BODY>[];
