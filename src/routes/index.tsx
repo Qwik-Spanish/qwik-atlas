@@ -22,7 +22,9 @@ export default component$(() => {
   return (
     <>
       {
-        store.data && <div>{JSON.stringify(store.data)}</div>
+        store.data && (store.data['characters']['data'] as []).map((data) => {
+          return <p>{data['name']}</p>
+        })
       }
 
       <Hero />

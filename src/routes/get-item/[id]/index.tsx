@@ -5,7 +5,7 @@ export const onGet: RequestHandler = async (event: RequestEvent) => {
   console.log('PARAMS:', event.params)
   
    const character =  await getItem(event.params['id'], 'characters');
-   event.send(202, JSON.stringify({
+   event.send(character.data ? 202 : 404, JSON.stringify({
     character,
    }));
   
